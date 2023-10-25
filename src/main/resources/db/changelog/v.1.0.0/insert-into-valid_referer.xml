@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="insert-into-valid_referer" author="Veronika Kulieva">
+        <insert tableName="valid_referer">
+            <column name="id" value="1"/>
+            <column name="name" value="client-account"/>
+            <column name="url" value="http://client-account:8080"/>
+        </insert>
+
+        <insert tableName="valid_referer">
+            <column name="id" value="2"/>
+            <column name="name" value="products"/>
+            <column name="url" value="http://products:8081"/>
+        </insert>
+
+        <insert tableName="valid_referer">
+            <column name="id" value="3"/>
+            <column name="name" value="tariffs"/>
+            <column name="url" value="http://tariffs:8082"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="validation_rules">
+                <where>id between 1 and 3</where>
+            </delete>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
