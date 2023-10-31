@@ -9,5 +9,4 @@ class AuthValidRefererApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
