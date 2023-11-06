@@ -7,7 +7,7 @@ import io.swagger.v3.oas.annotations.info.Info;
 @OpenAPIDefinition(
         info = @Info(
                 title = "AuthValidService Api",
-                description = "tariffs", version = "1.0.0",
+                description = "AuthValidService Api", version = "1.0.0",
                 contact = @Contact(
                         name = "Kulieva Veronika"
                 )
